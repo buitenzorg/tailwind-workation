@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "alwaysStrict": true,
+    "noImplicitAny": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -19,5 +20,5 @@
     "target": "esnext"
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "postcss.config.js", "tailwind.config.js"]
 }

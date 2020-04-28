@@ -5,6 +5,25 @@
 // import User from 'path/to/interfaces';
 
 export type User = {
-  id: number
-  name: string
+  id: number;
+  name: string;
+};
+
+export interface IHomeSearchResult {
+  city: string;
+  desc: string;
+  houses: IHouse[];
+}
+
+export interface IHouse {
+  isPlus: boolean;
+  beds: number;
+  baths: number;
+  desc: string;
+  rates: {
+    period: string;
+    amount: number;
+  };
+  rating: number;
+  reviews: number;
 }

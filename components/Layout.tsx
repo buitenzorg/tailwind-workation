@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 
@@ -6,7 +6,7 @@ type Props = {
   title?: string
 }
 
-const Layout: React.FunctionComponent<Props> = ({
+const Layout: React.FC<Props> = ({
   children,
   title = 'This is the default title',
 }) => (
@@ -17,7 +17,7 @@ const Layout: React.FunctionComponent<Props> = ({
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <header>
-      <nav>
+      <nav className="flex justify-between">
         <Link href="/">
           <a>Home</a>
         </Link>{' '}
