@@ -20,6 +20,7 @@ export interface IHouse {
   beds: number;
   baths: number;
   desc: string;
+  img?: string;
   rates: {
     period: string;
     amount: number;

@@ -12,7 +12,7 @@ const HouseCardDetail: React.FC<Props> = ({ houses }) => (
         <div>
           <img
             className="h-64 rounded-lg shadow-md"
-            src="/img/kenny.jpg"
+            src={house.img}
             alt=""
           />
         </div>
