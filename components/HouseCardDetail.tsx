@@ -8,16 +8,16 @@ type Props = {
 const HouseCardDetail: React.FC<Props> = ({ houses }) => (
   <>
     {houses.map((house, i) => (
-      <div key={i} className="mt-10">
-        <div>
+      <div key={i} className="mt-10 sm:max-w-xs sm:w-full sm:flex-shrink-0 sm:px-2 sm:pb-8">
+        <div className="relative pb-5/6">
           <img
-            className="h-64 rounded-lg shadow-md"
+            className="h-64 rounded-lg shadow-md absolute inset-0 h-full object-cover"
             src={house.img}
             alt=""
           />
         </div>
         <div className="relative px-4 -mt-16">
-          <div className="bg-white rounded-lg px-4 py-3 ">
+          <div className="bg-white rounded-lg px-4 py-3 shadow-lg">
             <div className="flex items-baseline uppercase leading-loose tracking-wide font-semibold">
               {house.isPlus && (
                 <span className="inline-block bg-teal-200 text-teal-800 rounded-full px-2 py-1 leading-none text-sm">

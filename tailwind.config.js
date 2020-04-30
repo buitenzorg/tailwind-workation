@@ -15,6 +15,9 @@ module.exports = {
         '128': '32rem',
         '200': '50rem',
       },
+      padding: {
+        '5/6': '83.333333%'
+      }
     },
     customForms: (theme) => ({ 
       default: {
