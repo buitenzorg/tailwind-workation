@@ -3,125 +3,121 @@ import { useState } from 'react';
 const FilterForm = () => (
   <div className="filters-form">
     <form>
-      <div className="px-4 py-4 border-t border-gray-900 text-white sm:flex sm:-mx-2">
-        <div className="flex -mx-2 sm:w-1/2 sm:mx-0">
-          <label className="block w-1/2 px-2">
-            <span className="font-semibold text-gray-500">Bedrooms</span>
-            <select
-              className="form-select mt-1 block w-full shadow"
-              name=""
-              id=""
-            >
-              <option value="">4</option>
-            </select>
-          </label>
-          <label className="block w-1/2 px-2">
-            <span className="font-semibold text-gray-500">Bathrooms</span>
-            <select className="form-select mt-1 block w-full" name="" id="">
-              <option value="">2</option>
-            </select>
-          </label>
+      <div className="lg:flex">
+        <div className="px-4 py-4 border-t border-gray-900 text-white lg:w-1/3">
+          <div className="flex flex-wrap -mx-2">
+            <label className="block w-1/2 px-2 sm:w-1/4 lg:w-1/2">
+              <span className="font-semibold text-gray-500">Bedrooms</span>
+              <select
+                className="form-select mt-1 block w-full shadow"
+                name=""
+                id=""
+              >
+                <option value="">4</option>
+              </select>
+            </label>
+            <label className="block w-1/2 px-2 sm:w-1/4 lg:w-1/2">
+              <span className="font-semibold text-gray-500">Bathrooms</span>
+              <select className="form-select mt-1 block w-full" name="" id="">
+                <option value="">2</option>
+              </select>
+            </label>
+            <label className="mt-4 block w-full px-2 sm:mt-0 sm:w-1/2 lg:w-full lg:mt-4">
+              <span className="font-semibold text-gray-500">Price Range</span>
+              <select className="form-select block w-full mt-1" name="" id="">
+                <option value="">Up to $2000 /wk</option>
+              </select>
+            </label>
+          </div>
         </div>
-        <div className="mt-4 -mx-2 px-2 sm:mt-1 sm:w-1/2 sm:mx-1">
-          <label className="block w-full">
-            <span className="font-semibold text-gray-500">Price Range</span>
-            <select className="form-select block w-full" name="" id="">
-              <option value="">Up to $2000 /wk</option>
-            </select>
-          </label>
+        <div className="border-t border-gray-900 px-4 py-4 text-white lg:w-1/3 lg:border-l">
+          <span className="text-gray-500 font-semibold">Property Type</span>
+          <div className="sm:flex sm:-mx-2 lg:block">
+            <label className="flex items-center mt-3 sm:w-1/4 sm:px-2 lg:w-full">
+              <input
+                type="radio"
+                className="form-radio"
+                name="propertyType"
+                value="house"
+              />
+              <span className="ml-2">House</span>
+            </label>
+            <label className="flex items-center mt-3 sm:w-1/4 sm:px-2 lg:w-full">
+              <input
+                type="radio"
+                className="form-radio"
+                name="propertyType"
+                value="apartment"
+              />
+              <span className="ml-2">Apartment</span>
+            </label>
+            <label className="flex items-center mt-3 sm:w-1/4 sm:px-2 lg:w-full">
+              <input
+                type="radio"
+                className="form-radio"
+                name="propertyType"
+                value="loft"
+              />
+              <span className="ml-2">Loft</span>
+            </label>
+            <label className="flex items-center mt-3 sm:w-1/4 sm:px-2 lg:w-full">
+              <input
+                type="radio"
+                className="form-radio"
+                name="propertyType"
+                value="townhouse"
+              />
+              <span className="ml-2">Townhouse</span>
+            </label>
+          </div>
         </div>
-      </div>
-      <div className="border-t border-gray-900 px-4 py-5 text-white">
-        <span className="text-gray-500 font-semibold">Property Type</span>
-        <div className="sm:flex sm:-mx-2">
-          <label className="flex sm:w-1/4 sm:px-2 items-center mt-3">
-            <input
-              type="radio"
-              className="form-radio"
-              name="propertyType"
-              value="house"
-            />
-            <span className="ml-2">House</span>
-          </label>
-          <label className="flex sm:w-1/4 sm:px-2 items-center mt-3">
-            <input
-              type="radio"
-              className="form-radio"
-              name="propertyType"
-              value="apartment"
-            />
-            <span className="ml-2">Apartment</span>
-          </label>
-          <label className="flex sm:w-1/4 sm:px-2 items-center mt-3">
-            <input
-              type="radio"
-              className="form-radio"
-              name="propertyType"
-              value="loft"
-            />
-            <span className="ml-2">Loft</span>
-          </label>
-          <label className="flex sm:w-1/4 sm:px-2 items-center mt-3">
-            <input
-              type="radio"
-              className="form-radio"
-              name="propertyType"
-              value="townhouse"
-            />
-            <span className="ml-2">Townhouse</span>
-          </label>
-        </div>
-      </div>
-      <div className="text-white border-t border-gray-900 py-4 px-5">
-        <span className="text-gray-500 font-semibold">Amenities</span>
-        <div className="sm:flex sm:-mx-2 sm:flex-wrap">
-          <label className="flex sm:w-1/4 sm:px-2 items-center mt-3">
-            <input className="form-checkbox" type="checkbox" name="balcony" />
-            <span className="ml-2">Balcony</span>
-          </label>
-          <label className="flex sm:w-1/4 sm:px-2 items-center mt-3">
-            <input className="form-checkbox" type="checkbox" name="pool" />
-            <span className="ml-2">Pool</span>
-          </label>
-          <label className="flex sm:w-1/4 sm:px-2 items-center mt-3">
-            <input className="form-checkbox" type="checkbox" name="beach" />
-            <span className="ml-2">Beach</span>
-          </label>
-          <label className="flex sm:w-1/4 sm:px-2 items-center mt-3">
-            <input
-              className="form-checkbox"
-              type="checkbox"
-              name="petFriendly"
-            />
-            <span className="ml-2">Pet Friendly</span>
-          </label>
-          <label className="flex sm:w-1/4 sm:px-2 items-center mt-3">
-            <input
-              className="form-checkbox"
-              type="checkbox"
-              name="kidFriendly"
-            />
-            <span className="ml-2">Kid Friendly</span>
-          </label>
-          <label className="flex sm:w-1/4 sm:px-2 items-center mt-3">
-            <input
-              className="form-checkbox"
-              type="checkbox"
-              name="parking"
-            />
-            <span className="ml-2">Parking</span>
-          </label>
-          <label className="flex sm:w-1/2 sm:px-2 items-center mt-3">
-            <input
-              className="form-checkbox"
-              type="checkbox"
-              name="airConditioning"
-            />
-            <span className="ml-2">Air Conditioning</span>
-          </label>
+        <div className="text-white border-t border-gray-900 py-4 px-5 lg:w-1/3 lg:border-l">
+          <span className="text-gray-500 font-semibold">Amenities</span>
+          <div className="sm:flex sm:-mx-2 sm:flex-wrap">
+            <label className="flex items-center mt-3 sm:w-1/4 sm:px-2 lg:w-1/2 truncate">
+              <input className="form-checkbox" type="checkbox" name="balcony" />
+              <span className="ml-2">Balcony</span>
+            </label>
+            <label className="flex items-center mt-3 sm:w-1/4 sm:px-2 lg:w-1/2 truncate">
+              <input className="form-checkbox" type="checkbox" name="pool" />
+              <span className="ml-2">Pool</span>
+            </label>
+            <label className="flex items-center mt-3 sm:w-1/4 sm:px-2 lg:w-1/2 truncate">
+              <input className="form-checkbox" type="checkbox" name="beach" />
+              <span className="ml-2">Beach</span>
+            </label>
+            <label className="flex items-center mt-3 sm:w-1/4 sm:px-2 lg:w-1/2 truncate">
+              <input
+                className="form-checkbox"
+                type="checkbox"
+                name="petFriendly"
+              />
+              <span className="ml-2">Pet Friendly</span>
+            </label>
+            <label className="flex items-center mt-3 sm:w-1/4 sm:px-2 lg:w-1/2 truncate">
+              <input
+                className="form-checkbox"
+                type="checkbox"
+                name="kidFriendly"
+              />
+              <span className="ml-2">Kid Friendly</span>
+            </label>
+            <label className="flex items-center mt-3 sm:w-1/4 sm:px-2 lg:w-1/2 truncate">
+              <input className="form-checkbox" type="checkbox" name="parking" />
+              <span className="ml-2">Parking</span>
+            </label>
+            <label className="flex items-center mt-3 sm:w-1/4 sm:px-2 lg:w-1/2 truncate">
+              <input
+                className="form-checkbox"
+                type="checkbox"
+                name="airConditioning"
+              />
+              <span className="ml-2">Air Conditioning</span>
+            </label>
+          </div>
         </div>
       </div>
-      <div className="bg-gray-900 px-4 py-4">
+      <div className="bg-gray-900 px-4 py-4 sm:text-right">
         <button
           type="button"
           className="block w-full sm:w-auto sm:inline-block bg-indigo-500 hover:bg-indigo-400 font-semibold text-white px-4 py-2 rounded-lg ho"
@@ -134,7 +130,7 @@ const FilterForm = () => (
 );
 
 const SiteFilters: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <section className="bg-gray-800">
       <div className="flex px-4 py-3 justify-between text-gray-500">
