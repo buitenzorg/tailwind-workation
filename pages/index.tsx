@@ -76,16 +76,18 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const IndexPage = ({ searchResults }: Props) => (
-  <div className="flex min-h-screen flex-col bg-gray-200 antialiased">
+  <div className="flex min-h-screen flex-col bg-gray-200 antialiased xl:flex-col xl:h-screen">
     <SiteHeader />
-    <SiteFilters /> 
-    <main className="main-content overflow-y-auto flex-col px-4 py-6">
-      <h2 className="text-xl text-gray-900">{searchResults.city}</h2>
-      <p className="text-gray-60">{searchResults.desc}</p>
-      <div className="-mt-8 sm:flex sm:overflow-x-auto sm:-mx-2">
-        <HouseCardDetail houses={searchResults.houses} />
-      </div>
-    </main>
+    <div className="xl:flex-1 xl:flex overflow-y-hidden">
+      <SiteFilters />
+      <main className="main-content overflow-y-auto flex-col px-4 py-6">
+        <h2 className="text-xl text-gray-900">{searchResults.city}</h2>
+        <p className="text-gray-60">{searchResults.desc}</p>
+        <div className="-mt-8 sm:flex sm:overflow-x-auto sm:-mx-2 xl:overflow-y-auto">
+          <HouseCardDetail houses={searchResults.houses} />
+        </div>
+      </main>
+    </div>
   </div>
 );
 
