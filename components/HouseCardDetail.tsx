@@ -1,6 +1,7 @@
 import React from 'react';
 import Rating from './Rating';
 import { IHouse } from '../interfaces';
+import Img from 'react-image';
 
 type Props = {
   houses: IHouse[];
@@ -8,11 +9,26 @@ type Props = {
 const HouseCardDetail: React.FC<Props> = ({ houses }) => (
   <>
     {houses.map((house, i) => (
-      <div key={i} className="mt-10 sm:max-w-xs sm:w-full sm:flex-shrink-0 sm:px-2 sm:pb-8 xl:w-1/3 z-0">
+      <div
+        key={i}
+        className="mt-10 sm:max-w-xs sm:w-full sm:flex-shrink-0 sm:px-2 sm:pb-8 xl:w-1/3 z-0"
+      >
         <div className="relative pb-5/6">
-          <img
-            className="h-64 rounded-lg shadow-md absolute inset-0 h-full object-cover"
+          <Img
+            className="h-64 rounded-lg shadow-md absolute inset-0 h-full object-cover object-center"
             src={house.img}
+            unloader={
+              <img
+                src="/img/no-image.png"
+                className="h-64 rounded-lg shadow-md absolute inset-0 h-full object-cover object-center"
+              />
+            }
+            loader={
+                <img
+                  src="/img/loading-block.gif"
+                  className="absolute inset-0 m-auto bg-white"
+                />
+            }
             alt=""
           />
         </div>
