@@ -10,7 +10,7 @@ export const searchResults: IHomeSearchResult[] = [
         beds: 3,
         baths: 2,
         desc: 'Modern Home in city center',
-        img: '/img/kenny.jpg',
+        img: '/img/unsplash-bernard.jpg',
         rates: {
           period: 'wk',
           amount: 1400,
@@ -36,7 +36,7 @@ export const searchResults: IHomeSearchResult[] = [
         beds: 3,
         baths: 2,
         desc: 'Modern Home in city center',
-        img: '/img/kenny.jpg',
+        img: '/img/unsplash-bernard.jpg',
         rates: {
           period: 'mon',
           amount: 5500,
@@ -68,7 +68,7 @@ export const searchResults: IHomeSearchResult[] = [
         beds: 3,
         baths: 2,
         desc: 'Modern Home in city center',
-        img: '/img/kenny.jpg',
+        img: '/img/unsplash-bernard.jpg',
         rates: {
           period: 'wk',
           amount: 1400,
@@ -94,7 +94,7 @@ export const searchResults: IHomeSearchResult[] = [
         beds: 3,
         baths: 2,
         desc: 'Modern Home in city center',
-        img: '/img/kenny.jpg',
+        img: '/img/unsplash-bernard.jpg',
         rates: {
           period: 'mon',
           amount: 5500,
