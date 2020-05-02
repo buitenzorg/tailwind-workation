@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import Link from 'next/link';
 
 const SiteHeader: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openProfile, setOpenProfile] = useState(false);
   return (
     <div className="nav bg-gray-900 sm:flex sm:items-center sm:justify-between xl:bg-white">
       <div className="flex px-4 py-3 items-center text-gray-500 justify-between xl:w-72 xl:bg-gray-900 xl:justify-center xl:text-lg xl:py-5">
@@ -70,7 +72,7 @@ const SiteHeader: React.FC = () => {
           />
         </div>
         <div className="sm:flex sm:items-center">
-          <div className="px-2 pt-2 pb-5 border-b border-gray-800 sm:border-b-0 sm:py-2 sm:flex sm:text-sm sm:px-0 xl:text-gray-900 xl:text-base">
+          <div className="px-2 pt-2 pb-5 border-b border-gray-800 sm:border-b-0 sm:py-2 sm:flex sm:text-sm sm:px-0 xl:text-gray-900 sm:text-sm xl:text-base">
             <a
               href="#"
               className="block px-2 py-1 rounded-md hover:bg-gray-600"
@@ -90,27 +92,51 @@ const SiteHeader: React.FC = () => {
               Messages
             </a>
           </div>
-          <div className="py-5 sm:py-0 sm:px-0">
+          <div className="relative py-5 sm:py-0 sm:px-0">
             <div className="px-3 flex items-center">
-              <img
-                src="/img/jonathan.jpg"
-                alt=""
-                className="rounded-full w-10 h-10 object-cover border-2 border-gray-600 sm:w-8 sm:h-8 xl:border-gray-300"
-              />
+              <a href="#" onClick={() => setOpenProfile(!openProfile)}>
+                <img
+                  src="/img/jonathan.jpg"
+                  alt=""
+                  className="rounded-full w-10 h-10 object-cover border-2 border-gray-600 sm:w-8 sm:h-8 xl:border-gray-300"
+                />
+              </a>
               <span className="font-semibold text-gray-200 ml-4 sm:hidden">
                 Isla Schoger
               </span>
             </div>
-            <div className="px-4 mt-5 flex flex-col text-gray-400 sm:hidden">
-              <a href="#" className="block hover:text-white">
-                Account Settings
-              </a>
-              <a href="#" className="block hover:text-white mt-3">
-                Support
-              </a>
-              <a href="#" className="block hover:text-white mt-3">
-                Sign out
-              </a>
+            <div
+              className={`px-4 mt-5 flex flex-col text-gray-400 ${
+                openProfile ? 'block' : 'sm:hidden'
+              } sm:absolute sm:right-0 sm:w-48 sm:bg-white sm:rounded-lg sm:shadow-lg sm:mt-3 sm:py-2 sm:px-0 z-20`}
+            >
+              <div
+                onClick={() => setOpenProfile(false)}
+                className={`sm:inset-0 sm:fixed sm:z-0 sm:cursor-default sm:bg-transparent ${
+                  openProfile ? 'sm:block' : 'hidden'
+                }`}
+              ></div>
+              <div className="z-10">
+                <a
+                  href="#"
+                  className="block hover:text-white sm:pt-0 sm:text-gray-900 sm:hover:bg-indigo-500 sm:pl-4 font-normal"
+                >
+                  Account Settings
+                </a>
+
+                <Link href="splash">
+                  <a className="block hover:text-white mt-3 sm:pt-0 sm:text-gray-900 sm:hover:bg-indigo-500 sm:pl-4 font-normal">
+                    Support
+                  </a>
+                </Link>
+
+                <a
+                  href="#"
+                  className="block hover:text-white mt-3 sm:pt-0 sm:text-gray-900 sm:hover:bg-indigo-500 sm:pl-4 font-normal"
+                >
+                  Sign out
+                </a>
+              </div>
             </div>
           </div>
         </div>

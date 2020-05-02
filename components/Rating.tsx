@@ -11,7 +11,7 @@ const Rating: React.FC<Props> = ({ ratings }) => {
       {max.map((val) => { 
         return (
         <svg
-          className={`w-5 h-5 text-teal-200 ${val > ratings ? 'stroke-current' : 'fill-current'}`}
+          className={`w-5 h-5 text-teal-600 ${val > ratings ? 'stroke-current' : 'fill-current'}`}
           key={val}
           fill="none"
           strokeLinecap="round"

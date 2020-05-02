@@ -8,7 +8,7 @@ type Props = {
 const HouseCardDetail: React.FC<Props> = ({ houses }) => (
   <>
     {houses.map((house, i) => (
-      <div key={i} className="mt-10 sm:max-w-xs sm:w-full sm:flex-shrink-0 sm:px-2 sm:pb-8 xl:w-1/3">
+      <div key={i} className="mt-10 sm:max-w-xs sm:w-full sm:flex-shrink-0 sm:px-2 sm:pb-8 xl:w-1/3 z-0">
         <div className="relative pb-5/6">
           <img
             className="h-64 rounded-lg shadow-md absolute inset-0 h-full object-cover"
@@ -28,7 +28,7 @@ const HouseCardDetail: React.FC<Props> = ({ houses }) => (
                 {`${house.beds} beds`} &bull; {`${house.baths} baths`}
               </span>
             </div>
-            <h4 className="text-gray-900 text-lg font-semibold mt-1">
+            <h4 className="text-gray-900 text-lg font-semibold mt-1 leading-tight truncate">
               {house.desc}
             </h4>
             <p className="mt-2">
@@ -38,7 +38,7 @@ const HouseCardDetail: React.FC<Props> = ({ houses }) => (
 
             <div className="flex items-center mt-2">
               <Rating ratings={house.rating} />
-              <span className="ml-2">{house.rating} Reviews</span>
+              <span className="ml-2">{house.reviews} Reviews</span>
             </div>
           </div>
         </div>
