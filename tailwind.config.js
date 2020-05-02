@@ -1,5 +1,10 @@
 module.exports = {
+  purge: ['./pages/**/*.{js,jsx,ts,tsx}', './components/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    fontFamily: {
+      display: ['Gilroy', 'sans-serif'],
+      body: ['Graphik', 'sans-serif'],
+    },
     extend: {
       colors: {
         'gray-900-spotify': '#121212',
